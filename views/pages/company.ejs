@@ -1,0 +1,15 @@
+<% if (name) { %>
+<h1>Company: <%= name %></h1>
+<% } else { %>
+<h1>Company does not exist.</h1>
+<% } %>
+
+<ul>
+  <% companies.forEach(company=> { %>
+  <li>
+    <a href="/companies/<%= company.slug %>">
+      <%= company.name %>
+    </a>
+  </li>
+  <% }) %>
+</ul>
