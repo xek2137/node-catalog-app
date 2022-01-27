@@ -1,10 +1,21 @@
 <h1>Our portals:</h1>
-<ul>
-  <% companies.forEach(company=> { %>
-  <li>
-    <a href="/companies/<%= company.slug %>">
-      <%= company.name %>
-    </a>
-  </li>
-  <% }) %>
-</ul>
+<form>
+  <div class="card-body">
+    <%- include('partials/searchBox') %>
+    <%- include('partials/filters') %>
+
+    <% companies.forEach(company=> { %>
+    <div class="card bg-light mb-2">
+      <div class="card-body">
+        <p class="h2 mb-4"><%= company.name %></p>
+        <a href="/companies/<%= company.slug %>" class="btn btn-primary me-2">Open</a>
+        <a href="/admin/companies/<%= company.slug %>/edit" class="btn btn-success">Edit</a>
+        <a href="/admin/companies/<%= company.slug %>/delete" class="btn btn-danger"
+          onclick="return confirm('Are you sure?')">Delete</a>
+      </div>
+    </div>
+    <% }) %>
+    <%- include('partials/pagination') %>
+  </div>
+
+</form>

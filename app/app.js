@@ -13,7 +13,8 @@ app.use(expressEjsLayouts)
 
 app.use(express.static('public'))
 
-app.use(express.urlencoded({ extended: true  }))
+app.use(express.urlencoded({ extended: true }))
+app.use('/', require('./middleware/variables'))
 
 app.use(require('./routes/web.js'))
 

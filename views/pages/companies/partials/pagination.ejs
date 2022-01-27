@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col">
+    <p>Results: <%- companies.length %> from: <%- resultsCount %></p>
+    <nav>
+      <ul class="pagination">
+        <% for (let i = 1; i <= pagesCount; i++) { %>
+        <li class="page-item <%- page === i ? 'active' : '' %> ">
+          <a href="#" class="page-link" data-page="<%- i %>">
+            <%- i  %>
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const changePage = e => {
+    e.preventDefault()
+    console.log(e.target)
+
+    const search = new URLSearchParams(window.location.search)
+    search.set('page', e.target.dataset.page)
+
+    const actualURL = window.location.origin + window.location.pathname + '?' + String(search)
+    window.location.href = actualURL
+  }
+
+  document.querySelectorAll('.pagination a').forEach(a => {
+    a.addEventListener('click', changePage)
+  })
+</script>

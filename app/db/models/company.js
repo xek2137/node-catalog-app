@@ -5,13 +5,13 @@ const { validateRestrictedValues } = require('../validators')
 const companySchema = new Schema({
 	name: {
 		type: String,
-		required: [true, 'Field is required! Cannot be an empty string!'],
-		minLength: [2, 'Minimum number of characters is 2!'],
+		required: [true, 'TV-Portal field is required! Cannot be an empty string!'],
+		minLength: [2, 'TV-Portal name: minimum number of characters is 2!'],
 	},
 	slug: {
 		type: String,
-		required: [true, 'Field is required! Cannot be an empty string!'],
-		minLength: [2, 'Minimum number of characters is 2!'],
+		required: [true, 'Your slug field is required! Cannot be an empty string!'],
+		minLength: [2, 'Your slug: minimum number of characters is 2!'],
 		validate: validateRestrictedValues,
 	},
 	filmsCount: {
@@ -20,6 +20,7 @@ const companySchema = new Schema({
 		default: 10,
 	},
 })
+
 // setter
 // companySchema.path('slug').set((value) => value.toLowerCase())
 

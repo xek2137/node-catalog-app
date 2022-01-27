@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-4">
+
+    <label for="sort" class="form-label">Sort</label>
+    <select name="sort" id="sort" class="form-control" onChange=this.form.submit()>
+      <option value="">Sort...</option>
+      <option value="name" <%- query.sort === 'name' ? 'selected' : '' %>>By name</option>
+      <option value="filmsCount" <%- query.sort === 'filmsCount' ? 'selected' : '' %>>By number of films</option>
+    </select>
+  </div>
+
+
+  <div class="col-2">
+
+    <div class="mb-3">
+      <label for="min" class="form-label">Movies (min)</label>
+      <input type="number" value="<%- query.min %>" class="form-control" id="min" name="min"
+        onChange=this.form.submit()>
+    </div>
+  </div>
+
+
+  <div class="col-2">
+
+    <div class="mb-3">
+      <label for="max" class="form-label">Movies (max)</label>
+      <input type="number" value="<%- query.max %>" class="form-control" id="max" name="max"
+        onChange=this.form.submit()>
+    </div>
+  </div>
+
+</div>
