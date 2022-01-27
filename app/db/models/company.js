@@ -7,11 +7,13 @@ const companySchema = new Schema({
 		type: String,
 		required: [true, 'TV-Portal field is required! Cannot be an empty string!'],
 		minLength: [2, 'TV-Portal name: minimum number of characters is 2!'],
+		unique: [true, 'Name Already Exists'],
 	},
 	slug: {
 		type: String,
 		required: [true, 'Your slug field is required! Cannot be an empty string!'],
 		minLength: [2, 'Your slug: minimum number of characters is 2!'],
+		unique: [true, 'Slug Already Exists'],
 		validate: validateRestrictedValues,
 	},
 	filmsCount: {
