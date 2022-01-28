@@ -31,7 +31,7 @@ class CompanyController {
 		const companies = await query.exec()
 		const resultsCount = await Company.find(location).count()
 		const pagesCount = Math.ceil(resultsCount / perPage)
-		
+
 		res.render('pages/companies/companies', {
 			companies,
 			page,
