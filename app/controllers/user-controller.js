@@ -22,6 +22,4 @@ class UserController {
 	}
 }
 
-userSchema.path('password').set(value => )
-
 module.exports = new UserController()
