@@ -1,5 +1,6 @@
 const { count } = require('console')
 const Company = require('../db/models/company')
+
 class CompanyController {
 	async showCompanies(req, res) {
 		const { search, sort, min, max } = req.query
